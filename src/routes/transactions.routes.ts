@@ -48,7 +48,7 @@ const upload = multer(uploadConfig);
 
 transactionsRouter.post(
   '/import',
-  upload.single('filecsv'),
+  upload.single('file'),
   async (request, response) => {
     const importTransactions = new ImportTransactionsService();
     const transactions = await importTransactions.execute(request.file.path);
